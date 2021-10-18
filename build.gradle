@@ -1,0 +1,44 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.5'
+    implementation group: 'org.springframework', name: 'spring-beans', version: '5.3.5'
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.5'
+    implementation group: 'org.springframework', name: 'spring-context-support', version: '5.3.5'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.4.11'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.5.2'
+
+    //jdbc dependencies
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.5'
+    implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.5'
+
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.5'
+    implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    //implementation group: 'org.eclipse.equinox', name: 'javax.servlet.jsp', version: '2.2.0.v201112011158'
+    implementation group: 'org.glassfish', name: 'javax.servlet', version: '3.2-b06'
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '7.0.1.Final'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.0'
+
+
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0'//sqlite
+    implementation group: 'javax.servlet', name: 'jstl'
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
+}
+
+test {
+    useJUnitPlatform()
+}
