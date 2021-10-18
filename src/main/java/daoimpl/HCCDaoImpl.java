@@ -67,9 +67,7 @@ public class HCCDaoImpl implements HCCDao {
     public List<HCC> getChilden(HCC hcc)
     {
         String SQL = "select Children from "+dbname+" where [index] = ?";
-        System.out.println("for "+hcc.toString());
         String children = jdbcTemplateObject.queryForObject(SQL, String.class, hcc.getIndex());
-        System.out.println("Returened children "+children);
         List<HCC> hccList = new ArrayList<>();
         if(children != null)
         {
@@ -96,11 +94,9 @@ public class HCCDaoImpl implements HCCDao {
             List<HCC> childrenList = getChilden(hcc1);
             for(HCC children : childrenList)
             {
-                System.out.println("if "+children + " is equal to "+hcc);
                 if(children.equals(hcc))
                 {
                     parentList.add(hcc1);
-                    System.out.println("true");
                 }
             }
         }
